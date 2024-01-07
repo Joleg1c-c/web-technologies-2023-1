@@ -46,13 +46,36 @@
 }
 
 .submit{
-    background: #5A98D0;
-    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
-    border-radius: 10px;
+    background: linear-gradient(to right, rgb(63, 88, 170), rgb(122, 97, 223));
+    border: 1px;
+    border-radius: 15px;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 40px;
     text-align: center;
     color: #FFFFFF;
     text-transform: uppercase;
+}
+
+.upBread{
+    background: linear-gradient(rgb(255, 255, 255), rgb(57, 128, 129));
+}
+
+.upBread li {
+    display: inline-block;
+    font-size: 20px;
+    padding-right: 10px;
+    border-right: 2px solid black;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.upBread li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.upBread li a:hover {
+    color: #ff1e00;
+    text-decoration: none;
 }

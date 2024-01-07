@@ -1,73 +1,71 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="src\assets\styles\style.css">
 </head>
 <body>
-    <header>
-        <img src="assets\img\логотип.jpg" width="170" height="100" alt="Логотип">
+    <div> 
+        <style>body{background: url(front.jpg); background-size: cover;}</style>
+        <header>
+            <img src="src\assets\img\логотип.jpg" width="170" height="100" alt="Логотип">
+            <ul class="upBread">
+                <li class="p"><a href="index.html">Главная</a></li>
+                <li class="p"><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </header>
+
+        <h2 class="h2">Contact US</h2>
+        <p class="p">Просто возьмите и свяжите с нами!</p>
+        <img src="src\assets\img\контактное_изображение.jpg" alt="Контактное изображение" style="max-width: 350px;">
+        
+        <h4 class="h4">Address</h4>
+        <p class="p">Тюмень</p>
+
+        <h4 class="h4">Phone</h4>
         <ul>
-            <p class="p"><li><a href="index.html">Главная</a></li></p>
-            <p class="p"><li><a href="contacts.html">Контакты</a></li></p>
+            <li>+7 (800) 555-3535</li>
+            <li>+7 (800) 555-5353</li>
         </ul>
-    </header>
 
-    <h2 class="h2">Contact US</h2>
-    <p class="p">Просто возьмите и свяжите с нами!</p>
-    <img src="assets\img\контактное_изображение.jpg" alt="Контактное изображение" style="max-width: 350px;">
-    
-    <h4 class="h4">Address</h4>
-    <p class="p">Тюмень</p>
-
-    <h4 class="h4">Phone</h4>
-    <ul>
-        <li>+7 (800) 555-3535</li>
-        <li>+7 (800) 555-5353</li>
-    </ul>
-
-    <h4 class="h4">Online Service</h4>
-    <ul>
-        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Наш сайт </a></li>
-        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">ay@mymail.com </a></li>
-        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">+7 (800) 666-5353 </a></li>
-    </ul>
-
-    <h4 class="h4">Send us a Message</h4>
-
-    <form action="" method="post">
-        <p class="p"><label for="full_name">Full Name:</label></p>
-        <input type="text" id="full_name" name="full_name" class="inputOrTextarea"><br>
-
-        <p class="p"><label for="email">Email:</label></p>
-        <input type="email" id="email" name="email" class="inputOrTextarea" required><br>
-
-        <p class="p"><label for="message">Message:</label><br></p>
-        <textarea id="message" name="message" rows="4" cols="50" class="inputOrTextarea" required></textarea><br>
-
-        <input type="submit" value="Submit" class="submit">
-    </form>
-
-    <footer>
-        <h3 class="h3">Контакты</h3>
-        
-        <p class="p">Свяжитесь с нами для получения дополнительной информации.</p>
-        
-        <hr>
-        
+        <h4 class="h4">Online Service</h4>
         <ul>
-            <p class="p"><li>Телефон: +7 (800) 555 35 35</li></p>
-            <p class="p"><li>Email: ay@mymail.com</li></p>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Наш сайт </a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">ay@mymail.com </a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">+7 (800) 666-5353 </a></li>
         </ul>
-        
-        <p class="p">Все права защищены.</p>
-    </footer>
-</div>
 
-<script src="index.js"></script>
+        <h4 class="h4">Send us a Message</h4>
+
+        <form action="" method="post">
+            <p class="p"><label for="full_name">Full Name:</label></p>
+            <input type="text" id="full_name" name="full_name" class="inputOrTextarea"><br>
+
+            <p class="p"><label for="email">Email:</label></p>
+            <input type="email" id="email" name="email" class="inputOrTextarea" required><br>
+
+            <p class="p"><label for="message">Message:</label><br></p>
+            <textarea id="message" name="message" rows="4" cols="50" class="inputOrTextarea" required></textarea><br>
+
+            <input type="submit" value="Submit" class="submit">
+        </form>
+
+        <footer>
+            <h3 class="h3">Контакты</h3>
+            
+            <p class="p">Свяжитесь с нами для получения дополнительной информации.</p>
+            
+            <hr>
+            
+            <ul>
+                <p class="p"><li>Телефон: +7 (800) 555 35 35</li></p>
+                <p class="p"><li>Email: ay@mymail.com</li></p>
+            </ul>
+            
+            <p class="p">Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
