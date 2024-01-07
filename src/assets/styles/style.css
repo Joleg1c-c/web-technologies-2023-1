@@ -126,6 +126,11 @@ header {
     padding: 0 25px;
 }
 
+nav a {
+    color: black;
+}
+
+
 .screen_block {
     width: 35%;
 }
