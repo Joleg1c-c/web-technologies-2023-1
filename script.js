@@ -78,7 +78,7 @@ function init() {
     items.render()
     items.init()
 
-    console.log(items.renderTest(data));
+    /*console.log(items.renderTest(data));*/
 
     function ListItems(el, data) {
         this.el = el;
