@@ -166,7 +166,7 @@ export const TicTacToe = {
   setBlockValue(target, clear) {
     const [row, col] = this.getBlockPosition(target)
      
-    const value = clear ? nul : this.getCurrentTurnValue();
+    const value = clear ? null : this.getCurrentTurnValue();
     this.matrixp[row - 1][col - 1] = value;
   },
 
