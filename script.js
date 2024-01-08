@@ -75,10 +75,10 @@ function init() {
     const items = new ListItems(document.getElementById('list-items'), data)
 
 
-  /*  items.render()*/
+    items.render()
     items.init()
 
-    /*console.log(items.renderTest(data));*/
+    console.log(items.renderTest(data));
 
     function ListItems(el, data) {
         this.el = el;
@@ -99,26 +99,26 @@ function init() {
         }
 
         this.renderParent = function (data) {
-            //проверка всех элементов на hasChildren
-            //если hasChildren, то запускаем renderParent
-            //если !hasChildren, то запускаем renderChildren
-            //возвращает рендер родительского элемента
+            let html = '';
+            data.items.forEach(item => {
+                html += `<div class="list-item" data-parent>
+                <span data-open>${item.name}</span>`;
+                if (item.hasChildren) {
+                    html += `<div class="list-items__children">${this.renderParent(item)}</div>`;
+                }
+                html += `</div>`;
+            });
+            return html;
 
         }
 
         this.renderChildren = function (data) {
-            //вовзращает рендер элемента без вложенности
+            this.el.innerHTML = this.renderParent(this.data);
         }
 
         this.toggleItems = function (parent) {
             parent.classList.toggle('list-item_open')
         }
-
-/*        this.renderTest = function (data) {
-            return `
-            <div class="test">${data.name}</div>
-            `
-        }*/
     }
 
 }
