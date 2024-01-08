@@ -196,6 +196,9 @@ export const TicTacToe = {
    */
   changeTurnValue() {
     this.isXTurn = !this.isXTurn;
+    setTimeout(() => {
+      alert('Ход ' + this.getCurrentTurnValue())
+    })
   },
 
   /**
