@@ -126,6 +126,7 @@ export const TicTacToe = {
   restartGame() {
     for (let i = 0; i < this.boxes.length; i++){
       this.setBlockValue(this.boxes[i], true);
+      this.setBlockDom(this.boxes[i], true);
     }
     this.isXTurn = true;
     this.isGameEnd = false;
@@ -167,7 +168,7 @@ export const TicTacToe = {
     const [row, col] = this.getBlockPosition(target)
      
     const value = clear ? null : this.getCurrentTurnValue();
-    this.matrixp[row - 1][col - 1] = value;
+    this.matrix[row - 1][col - 1] = value;
   },
 
   /**
