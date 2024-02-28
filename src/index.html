@@ -7,13 +7,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    .special {
+      background-color: aqua;
+    }
+  </style>
 <body>
+    <div class="select_pizza_block">
+        <h3>Выбирите пиццу</h3>
+        <button onclick="CreateMargaritta()" id="pizzaSelector">Маргарита</button>
+        <button onclick="CreatePeperoni()" id="pizzaSelector">Пепперони</button>
+        <button onclick="CreateBavarsca()" id="pizzaSelector">Баварская</button>
+        <p id="Pizza">Выбрано: Пепперони</p>
+        <br>
+    </div>
 
-    <button onclick="CreateMargaritta()">Margaritta</button>
-    <button onclick="CreatePeperoni()">Peperoni</button>
-    <button onclick="CreateBavarsca()">Bavarsca</button>
-    <p>aadasd</p>
+    <div class="select_size_block">
+        <h3>Выбирите размер</h3>
+        <input onclick="ChangeSizeSmall()" type="radio" name="size" value="" checked="checked">Маленькая
+        <input onclick="ChangeSizeBig()" type="radio" name="size" value="">Большая
+    </div>
+
+    <div class="select_topping_block">
+        <br>
+        <h3>Добавить по вкусу</h3>
+        <button onclick="ChangeCheeseBort()" class="color-change-btn">Сырный бортик</button>
+        <button onclick="ChangeMozzarellllaaa()" class="color-change-btn">Сливочный моцарелла</button>
+        <button onclick="ChangeCheder()" class="color-change-btn">Чаддер и пармезан</button>
+    </div>
+
+    <div class="basket_button">
+        <br><br>
+        <button id="basket_button" style="font-size: 25px; background-color: orange; border-radius: 15px;">Добавить в корзину за  </button>
+        <br>
+    </div>
+    
+    
     <script src="./index.js"></script>
-
 </body>
 </html>

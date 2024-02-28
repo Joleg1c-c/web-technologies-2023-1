@@ -1,9 +1,11 @@
 class Pizza{
-  constructor(name, stuffing, price, calories){
+  constructor(name, stuffing){
     this.name = name
     this.stuffing = stuffing
-    this.price = price
-    this.calories = calories
+    this.dict_price_calories = {"Пепперони": "800 400", "Маргарита": "500 300", "Баварская": "700 450"}
+    this.price = Number(this.dict_price_calories[name].split(" ")[0])
+    this.calories = Number(this.dict_price_calories[name].split(" ")[1])
+    
     if (stuffing == "Маленькая"){ this.price += 100; this.calories += 100}
     else {this.price += 200; this.calories += 200}
     this.topping = []
@@ -31,20 +33,110 @@ class Pizza{
     
 }
 
-let pizza = new Pizza("Пепперони", "Маленькая", 800, 400)
-console.log(pizza.getStuffing() + " " + pizza.getSize())
+let stuffing = "Маленькая"
+let name = "Пепперони"
+let addCheeseBort = true
+let addCMozzarellllaaa = true
+let addCheder = true
+SetPizza()
 
 function CreatePeperoni(){
-  pizza = new Pizza("Пепперони", "Маленькая", 800, 400)
-  console.log(pizza.getStuffing() + " " + pizza.getSize())
+  name = "Пепперони"
+  SetPizza()
 }
 
 function CreateMargaritta(){
-  pizza = new Pizza("Маргарита", "Маленькая", 500, 300)
-  console.log(pizza.getStuffing() + " " + pizza.getSize())
+  name = "Маргарита"
+  SetPizza()
 }
 
 function CreateBavarsca(){
-  pizza = new Pizza("Баварская", "Маленькая", 700, 450)
-  console.log(pizza.getStuffing() + " " + pizza.getSize())
+  name = "Баварская"
+  SetPizza()
 }
+
+function ChangeSizeSmall(){
+  stuffing = "Маленькая"
+  SetPizza()
+}
+
+function ChangeSizeBig(){
+  stuffing = "Большая"
+  SetPizza()
+}
+
+function ChangeCheeseBort(){
+  if (addCheeseBort){
+    pizza.addTopping("сырный борт")
+    addCheeseBort = false
+  }
+  else{
+    pizza.removeTopping("сырный борт")
+    addCheeseBort = true
+  }
+  SetTopping()
+}
+
+function ChangeMozzarellllaaa(){
+  if (addCMozzarellllaaa){
+    pizza.addTopping("сливочная моцарелла")
+    addCMozzarellllaaa = false
+  }
+  else{
+    pizza.removeTopping("сливочная моцарелла")
+    addCMozzarellllaaa = true
+  }
+  SetTopping()
+}
+
+function ChangeCheder(){
+  if (addCheder){
+    pizza.addTopping("чедер и пармезан")
+    addCheder = false
+  }
+  else{
+    pizza.removeTopping("чедер и пармезан")
+    addCheder = true
+  }
+  SetTopping()
+}
+
+function SetTopping(){
+  console.log(pizza.getToppings())
+  SetButton()
+}
+
+function SetPizza(){
+  pizza = new Pizza(name, stuffing)
+  console.log(pizza.getStuffing() + " " + pizza.getSize())
+  document.getElementById("Pizza").innerHTML = "Выбрано: " + name
+  SetButton()
+}
+
+function SetButton(){
+  document.getElementById("basket_button").innerHTML = "Добавить в корзину за " + pizza.calculatePrice() + "₽ (" + pizza.calculateCalories() + " кКфлл)"
+}
+
+const buttons = document.querySelectorAll('.color-change-btn');
+
+  // Для каждой кнопки добавляем обработчик события клика
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Если кнопка уже синяя, убираем класс 'blue', иначе добавляем
+      if (button.classList.contains('special')) {
+        button.classList.remove('special');
+      } else {
+        button.classList.add('special');
+      }
+    });
+  });
+
+  const button3 = document.getElementById('pizzaSelector');
+
+  // Добавляем обработчик события клика на кнопку 3
+  button3.addEventListener('click', function() {
+    // Удаляем класс 'blue-bg' с кнопок 1 и 2
+    buttons.forEach(function(button) {
+      button.classList.remove('blue-bg');
+    });
+  });
