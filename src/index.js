@@ -31,32 +31,20 @@ class Pizza{
     
 }
 
-let pizza = new Pizza("Пепперони ", "Маленькая", 800, 400)
+let pizza = new Pizza("Пепперони", "Маленькая", 800, 400)
 console.log(pizza.getStuffing() + " " + pizza.getSize())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
 
-pizza = new Pizza("Маргарита", "Маленькая", 500, 300)
-console.log(pizza.getStuffing() + " " + pizza.getSize())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
-pizza.addTopping("сырный борт")
-pizza.addTopping("сливочная моцарелла")
-pizza.addTopping("чедер и пармезан")
-console.log(pizza.getToppings())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
-pizza.removeTopping("чедер и пармезан")
-pizza.removeTopping("сырный борт")
-console.log(pizza.getToppings())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
+function CreatePeperoni(){
+  pizza = new Pizza("Пепперони", "Маленькая", 800, 400)
+  console.log(pizza.getStuffing() + " " + pizza.getSize())
+}
 
-pizza = new Pizza("Баварская", "Большая", 700, 450)
-console.log(pizza.getStuffing() + " " + pizza.getSize())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
-pizza.addTopping("сырный борт")
-pizza.addTopping("чедер и пармезан")
-pizza.addTopping("сливочная моцарелла")
-console.log(pizza.getToppings())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
-pizza.removeTopping("сливочная моцарелла")
-pizza.removeTopping("сырный борт")
-console.log(pizza.getToppings())
-console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
+function CreateMargaritta(){
+  pizza = new Pizza("Маргарита", "Маленькая", 500, 300)
+  console.log(pizza.getStuffing() + " " + pizza.getSize())
+}
+
+function CreateBavarsca(){
+  pizza = new Pizza("Баварская", "Маленькая", 700, 450)
+  console.log(pizza.getStuffing() + " " + pizza.getSize())
+}
