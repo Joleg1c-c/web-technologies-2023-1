@@ -119,10 +119,8 @@ function SetButton(){
 
 const buttons = document.querySelectorAll('.color-change-btn');
 
-  // Для каждой кнопки добавляем обработчик события клика
   buttons.forEach(function(button) {
     button.addEventListener('click', function() {
-      // Если кнопка уже синяя, убираем класс 'blue', иначе добавляем
       if (button.classList.contains('special')) {
         button.classList.remove('special');
       } else {
@@ -131,12 +129,18 @@ const buttons = document.querySelectorAll('.color-change-btn');
     });
   });
 
-  const button3 = document.getElementById('pizzaSelector');
+  const button1 = document.getElementById('pizzaSelector1');
+  const button2 = document.getElementById('pizzaSelector2');
+  const button3 = document.getElementById('pizzaSelector3');
 
-  // Добавляем обработчик события клика на кнопку 3
-  button3.addEventListener('click', function() {
-    // Удаляем класс 'blue-bg' с кнопок 1 и 2
+  function handleButton345Click() {
     buttons.forEach(function(button) {
-      button.classList.remove('blue-bg');
+      button.classList.remove('special');
+      addCheeseBort = true
+      addCMozzarellllaaa = true
+      addCheder = true
     });
-  });
+  }
+  button1.addEventListener('click', handleButton345Click);
+  button2.addEventListener('click', handleButton345Click);
+  button3.addEventListener('click', handleButton345Click);
