@@ -1,11 +1,26 @@
 class Pizza{
-  constructor(name, stuffing, price, calories){
+  constructor(name, stuffing){
     this.name = name
     this.stuffing = stuffing
-    this.price = price
-    this.calories = calories
+
+    switch (this.name) {
+      case 'Маргарита':
+          this.price = 500;
+          this.calories = 300;
+          break;
+      case 'Пепперони':
+          this.price = 800;
+          this.calories = 400;
+          break;
+      case 'Баварская':
+          this.price = 700;
+          this.calories = 450;
+          break;
+  }
+    
     if (stuffing == "Маленькая"){ this.price += 100; this.calories += 100}
     else {this.price += 200; this.calories += 200}
+    
     this.topping = []
 
     this.dict = {"сливочная моцарелла Маленькая": "50 20", "сливочная моцарелла Большая": "100 20",
@@ -31,11 +46,11 @@ class Pizza{
     
 }
 
-let pizza = new Pizza("Пепперони ", "Маленькая", 800, 400)
+let pizza = new Pizza("Пепперони", "Маленькая")
 console.log(pizza.getStuffing() + " " + pizza.getSize())
 console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
 
-pizza = new Pizza("Маргарита", "Маленькая", 500, 300)
+pizza = new Pizza("Маргарита", "Маленькая")
 console.log(pizza.getStuffing() + " " + pizza.getSize())
 console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
 pizza.addTopping("сырный борт")
@@ -48,7 +63,7 @@ pizza.removeTopping("сырный борт")
 console.log(pizza.getToppings())
 console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
 
-pizza = new Pizza("Баварская", "Большая", 700, 450)
+pizza = new Pizza("Баварская", "Большая")
 console.log(pizza.getStuffing() + " " + pizza.getSize())
 console.log(pizza.calculatePrice() + " " + pizza.calculateCalories())
 pizza.addTopping("сырный борт")
