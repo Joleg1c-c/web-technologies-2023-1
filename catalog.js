@@ -23,37 +23,43 @@ const getPostItems = async ({limit, page}) => {
         }
         const total = +response.headers.get('x-total-count');
         const items = await response.json();
-        return {items, total};
+        return { items, total };
     } 
     catch (err) {
         console.error(err);
     }
 }
 
-// const renderPhotoItem = item => `
-//     <a  
-//         href="photos/${item.id}"
-//         class="photo-item"
-//     >
-//         <span class="photo-item__title">
-//             ${item.title}
-//         </span>
+const renderPhotoItem = item => `
+    <a  
+        href="photos/${item.id}"
+        class="photo-item"
+    >
+        <span class="photo-item__title">
+            ${item.title}
+        </span>
 
-//         <img 
-//             src=${item.url}
-//             class="photo-item__image"
-//         >
-//     </a>
-// `
+        <img 
+            src=${item.url}
+            class="photo-item__image"
+        >
+    </a>
+`
 
-// const getPhotoItems = ({ limit, page }) => {
-//     return fetch(`https://jsonplaceholder.typicode.com/photos?_limit=${limit}&_page=${page}`)
-//         .then(async res => {
-//             const total = +res.headers.get('x-total-count')
-//             const items = await res.json()
-//             return { items, total }
-//         })
-// }
+const getPhotoItems = async ({ limit, page }) => {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`);
+        if (!response.ok) {
+            console.error(response.status);
+        }
+        const total = +response.headers.get('x-total-count');
+        const items = await response.json();
+        return { items, total };
+    } 
+    catch (err) {
+        console.error(err);
+    }
+}
 
 const init = () => {
     const catalog = document.getElementById('catalog')
