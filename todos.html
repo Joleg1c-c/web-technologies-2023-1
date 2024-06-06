@@ -18,7 +18,23 @@
 </header>
 
 <main class="main">
+    <form id="todo-form" class="form">
+        <label class="text-field">
+            <input type="text" id="todo-description" placeholder="Введите название новой задачи">
+            <span class="text-field__error"></span>
+        </label>
 
+        <button type="submit" class="button" id="submit-todo">
+            Добавить новую задачу 
+        </button>
+    </form>
+
+    <div class="todo_list__container">
+        <h1>Список задач</h1>
+        <div class="todo_list__empty">Список задач пуст</div>
+        <ul class="todo__list" id="todo-list">
+        </ul>
+    </div>
 </main>
 
 <div class="loader-wrapper" data-loading>
