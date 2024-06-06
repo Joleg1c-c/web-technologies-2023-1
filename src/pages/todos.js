@@ -16,7 +16,6 @@ const init = async () => {
     const createTodoForm = document.getElementById("todo-form");
     const emptyTodoTitle = document.querySelector(".todo_list__empty");
 
-    // createTodoForm.addEventListener("submit", createTodo);
     todoList.addEventListener('click', removeTodo);
     todoList.addEventListener('click', updateTodo);
 
@@ -99,19 +98,6 @@ const init = async () => {
                     emptyTodoTitle.classList.add('none')
                 }
         }
-    }
-
-    function createTodo(event) {
-        event.preventDefault();
-        let description = createTodoForm.elements['todo-description'].value;
-        createTodoForm.elements["todo-description"].value = "";
-        createTodoForm.elements["todo-description"].focus();
-        createTodoRequest(description).then(
-            (res) => {
-                if (res.ok) {
-                    getTodosAndRender();
-                }
-            })
     }
 
     createTodoForm.addEventListener("submit", (event) => {
