@@ -1,6 +1,7 @@
 import Auth from "../services/auth.js";
 import location from "../services/location.js";
 import loading from "../services/loading.js";
+import api from "../services/api.js";
 
 const init = async () => {
     const { ok: isLogged } = await Auth.me()
@@ -15,7 +16,7 @@ const init = async () => {
     const createTodoForm = document.getElementById("todo-form");
     const emptyTodoTitle = document.querySelector(".todo_list__empty");
 
-    createTodoForm.addEventListener("submit", createTodo);
+    // createTodoForm.addEventListener("submit", createTodo);
     todoList.addEventListener('click', removeTodo);
     todoList.addEventListener('click', updateTodo);
 
@@ -113,18 +114,18 @@ const init = async () => {
             })
     }
 
-    // createTodoForm.addEventListener("submit", (event) => {
-    //     event.preventDefault();
-    //     let description = createTodoForm.elements['todo-description'].value;
-    //     createTodoForm.elements["todo-description"].value = "";
-    //     createTodoForm.elements["todo-description"].focus();
-    //     createTodoRequest(description).then(
-    //         (res) => {
-    //             if (res.ok) {
-    //                 getTodosAndRender();
-    //             }
-    //         })
-    // })
+    createTodoForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let description = createTodoForm.elements['todo-description'].value;
+        createTodoForm.elements["todo-description"].value = "";
+        createTodoForm.elements["todo-description"].focus();
+        createTodoRequest(description).then(
+            (res) => {
+                if (res.ok) {
+                    getTodosAndRender();
+                }
+            })
+    })
 
     function removeTodo (event) {
         if (event.target.dataset.action === 'delete') {
@@ -136,13 +137,14 @@ const init = async () => {
         }
     }
 
+    // меняет  его значение только когда сервер изменит статус todo
     async function updateTodo (event) {
         if (event.target.dataset.action === 'update') {
             event.preventDefault();
             let checkbox = event.target.parentElement.querySelector(".todo_item__status");
             let id = event.target.parentElement.parentElement.parentElement.dataset.id;
             let completed = checkbox.value === 'true';
-            console.log(completed)
+            // console.log(completed)
             await updateTodoRequest(id, !completed).then(
                 (res) => {
                     if (res.ok) {
