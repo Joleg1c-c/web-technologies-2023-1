@@ -1,0 +1,12 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.gallery img:hover {
+    z-index: 9;
+    transform: scale(1.1);
+    transition: transform ease 0.7s;
+}
